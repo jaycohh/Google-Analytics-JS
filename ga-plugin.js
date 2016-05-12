@@ -7,7 +7,7 @@ var _gaq = _gaq || [];
 })();
 
 (function(window, brightcove){
-  var _accountID = 'UA-123456-ab',
+  var _accountID = 'UA-37034155-1',
       _debug = true, //toggle to see console output in your brower's debug tools
       _player = brightcove.api.getExperience(),
       _experience = _player.getModule(brightcove.api.modules.APIModules.EXPERIENCE),
@@ -39,24 +39,24 @@ var _gaq = _gaq || [];
     AD_COMPLETE: 'Ad Complete',
     AD_START: 'Ad Start',
     MEDIA_ABANDONED: 'Media Abandoned',
-    MEDIA_BEGIN: 'Media Begin',
-    MEDIA_COMPLETE: 'Media Complete',
-    MEDIA_ERROR: 'Media Error',
-    MEDIA_PAUSE: 'Media Pause',
-    MEDIA_RESUME: 'Media Resume',
-    MILESTONE_25: '25% Milestone Passed',
-    MILESTONE_50: '50% Milestone Passed',
-    MILESTONE_75: '75% Milestone Passed',
-    PLAYER_LOAD: 'Player Load',
+    MEDIA_BEGIN: 'play',
+    MEDIA_COMPLETE: '100%',
+    MEDIA_ERROR: 'error',
+    MEDIA_PAUSE: 'pause',
+    MEDIA_RESUME: 'resume',
+    MILESTONE_25: '25%',
+    MILESTONE_50: '50%',
+    MILESTONE_75: '75%',
+    PLAYER_LOAD: 'player load',
     PLAYER_RESIZED_DOWN: 'Player Resized Down',
     PLAYER_RESIZED_UP: 'Player Resized Up',
-    SEEK_BACKWARD: 'Seeked Backward',
-    SEEK_FORWARD: 'Seeked Forward'
+    SEEK_BACKWARD: 'seek backward',
+    SEEK_FORWARD: 'seek forward'
   };
 
   _experience.getExperienceID(function(pExperienceID){
     _experienceID = pExperienceID;
-    _category = 'Brightcove (' + _experienceID + ')';
+    _category = 'video';
   });
 
   if(_experience.getReady())
@@ -383,7 +383,7 @@ var _gaq = _gaq || [];
   //checks the URL of the plugin to grab the account id if it exists
   function getAccountID()
   {
-    if(_accountID !== 'UA-XXXXX-X')
+    if(_accountID !== 'UA-37034155-1')
     {
       return _accountID;
     }
